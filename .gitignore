@@ -3,3 +3,10 @@ __pycache__/
 
 #SQLite
 db.sqlite3
+
+#ENV files
+.env
+.env/
+env/
+venv/
+env/
