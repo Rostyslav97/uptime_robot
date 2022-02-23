@@ -2,7 +2,7 @@ version: "3"
 
 
 services:
-  django:
+  django: &django
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -16,6 +16,20 @@ services:
       - redis
     volumes:
       - ./:/app/
+
+  celerybeat:
+    <<: *django # вместо того чтобы переписать все то, что в контейнере django. Переопределим то, что ниже
+    image: updatime_robot_celerybeat
+    container_name: updatime_robot_celerybeat
+    ports: []
+    command: bash -c "celery -A config beat -l INFO"
+
+  celeryworker:
+    <<: *django # вместо того чтобы переписать все то, что в контейнере django. Переопределим то, что ниже
+    image: updatime_robot_celeryworker
+    container_name: updatime_robot_celeryworker
+    ports: []
+    command: bash -c "celery -A config worker -l INFO"
 
 
   postgres:

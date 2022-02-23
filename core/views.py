@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from core.services import Checker
+from django.http import HttpResponse
 
-# Create your views here.
+def foo(request):
+    checker = Checker()
+    checker.generate_reports()
+    return HttpResponse("Done")

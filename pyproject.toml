@@ -11,6 +11,9 @@ django-environ = "==0.8.1"
 psycopg2-binary = "==2.9.3"
 celery = "==5.2.3"
 django-celery-beat = "==2.2.1"
+requests = "==2.27.1"
+httpx = "^0.22.0"
+redis = "==4.1.4"
 
 [tool.poetry.dev-dependencies]
 black = "^22.1.0"

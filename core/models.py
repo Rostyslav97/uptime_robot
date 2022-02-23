@@ -22,8 +22,6 @@ class ReportStatuses(Enum):
 
 
 class Report(models.Model):
-    statuses = ["Available", "NotAvailable", "Blocked", "Hacked"]
-
     site = models.ForeignKey(
         "Website", related_name="reports", on_delete=models.DO_NOTHING
     )
