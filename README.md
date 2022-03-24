@@ -1,4 +1,4 @@
-# Social Network REST API Application
+# Uptime Robot REST API Application
 
 # Setup
 
